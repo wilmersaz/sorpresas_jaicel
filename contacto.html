@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Latest updates and statistic charts">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="https://w7.pngwing.com/pngs/694/236/png-transparent-shopping-cart-x-cart-maroon-text-orange-logo.png" />
+	<title>Tienda AOF</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Helvetica, Arial, sans-serif;
+			color: #666;
+			background: #f2f2f2; 
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 2.3em;
+			line-height: 1.3em;
+			margin: 15px 0;
+			text-align: center;
+			font-weight: 300;
+		}
+
+		p {
+			margin: 0 0 1.5em 0;
+		}
+
+		img {
+			width: 100%;
+		}
+		#main-header {
+			background: #333;
+			color: white;
+			height: 80px;
+			width: 100%; 
+			left: 0;
+			top: 0;
+			position: fixed; 
+		} 
+		#main-header a {
+			color: white;
+		}
+
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			padding-right: 20px;
+		}
+
+		nav ul li {
+			display: inline-block;
+			line-height: 80px;
+		}
+
+		nav ul li a {
+			display: block;
+			padding: 0 10px;
+			text-decoration: none;
+		}
+
+		nav ul li a:hover {
+			background: #606060;
+		}
+
+		form {
+			width: 300px;
+			margin: 180px auto;
+			text-align: center;
+			padding: 15px;
+			height: 380px;
+			position: relative;
+		}
+
+		form h1 {
+			color: #666;
+			font-weight: 900;
+			font-size: 35px;
+			margin-top: 0;
+			margin-bottom: 15px;
+		}
+
+		form input[type="text"],
+		form input[type="number"],
+		form input[type="email"],
+		form textarea {
+			padding: 10px;
+			
+			margin-bottom: 15px
+		}
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		input[type=number] {
+			-moz-appearance:textfield;
+		}
+		.cant-submit:hover {
+			background-color: #353535;
+			background-image: linear-gradient(#353535, #ffffff); 
+		}
+
+		form input[type="submit"] {
+			cursor: pointer;
+			background-color: gray;
+			color: #FFF;
+			/*border: 1px solid gray;*/
+			padding: 10px 20px;
+			position: absolute;
+			left: 50%;
+			bottom: 10px;
+			width: 123px;
+			height: 40px;
+			margin-left: -61px;
+			font: bold 14px Arial, Helvetica;
+			text-transform: uppercase;
+			text-decoration: none;
+			display: inline-block;       
+			background-image: linear-gradient(#ffffff, #353535);
+			border-radius: 3px;     
+			text-shadow: 0 1px 0 rgba(0,0,0,.3);        
+			box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+		}
+	</style>
+</head>
+<body>
+	<header id="main-header">
+		<nav >
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="productos.html">Ver productos</a></li>
+				<li><a href="login.html">iniciar sesión</a></li>
+				<li style="float: right;"><a href="contacto.html">Contáctenos</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	
+	<form style="border: 3px solid gray;">
+		<h1>Contáctanos</h1>
+		<input type="text" name="nombre" id="nombre" placeholder="nombre de usuario" />
+		<input type="number" name="telefono" id="telefono" placeholder="teléfono" />
+		<input type="email" name="email" id="email" placeholder="email" />
+		<textarea name="observacion" id="observacion" placeholder="observación" rows="5"></textarea>
+		<input class="cant-submit" type="submit" value="Ingresar" />
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$('#telefono').on('keydown', function(e){
+			if(e.which == 38 || e.which == 40) {
+				return false;
+			}
+		});
+	</script>
+</body>
+</html>
