@@ -1,0 +1,25 @@
+configurar usuario
+$ git config --global user.name "wilmersaz"
+configurar correo
+$ git config --global user.email "wasanchez@serdan.com.co"
+crear nuevo repositorio (en https://github.com/new)
+
+git init
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/wilmersaz/sorpresas_jaicel.git
+git push -u origin main
+ingresar correo
+contraseña
+username
+contraseña
+
+para actualizar
+
+crear una rama y pasarse a esa rama
+git checkout -b contactUs
+git add .
+git commit -m "segundo commit"
+git push origin contactUs
+
+crear base de datos en mysql
