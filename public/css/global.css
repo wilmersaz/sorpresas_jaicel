@@ -1,0 +1,137 @@
+.boton_opcion .btn_opcion{
+	background: #006699;
+    color: #FFFFFF;
+    height: 80px;
+    padding-top: 10px;
+    border: 1px solid #006699;
+    text-decoration: none;
+    cursor: pointer;
+}
+.boton_opcion:hover .btn_opcion{
+	background: #FFFFFF;
+    color: #006699;
+    text-decoration: none;
+    cursor: pointer;
+}
+.boton_opcion:hover{
+	text-decoration: none;
+}
+
+.btn-exportarPDF{
+    margin-bottom: 10px;
+    background: #f4516c!important;
+    border-color:#f4516c!important;;
+}
+.btn-exportarPDF:hover{
+    background: #f22d4e!important;
+    border-color: #f22d4e!important;
+}
+.btn-exportarPDF span{
+    color:#FFFFFF!important;
+}
+.btn-exportar{
+    margin-bottom: 10px;
+    background: #34bfa3!important;
+    border-color: #34bfa3!important;
+}
+.btn-exportar span{
+    color:#FFFFFF!important;
+}
+.btn-exportar:hover{
+    border-color:#FFFFFF !important;
+    background: #2ca189 !important;
+}
+.jdatatables{
+    width: 100%!important;
+}
+.pagination-panel input{
+    text-align: center;
+    margin: 0 5px;
+    display: inline-block;
+    width: 30%;
+}
+.pagination-panel a{
+    display: inline-block;
+    width: 15%;
+}
+.imagen_usuario{
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+.btn-secondary{
+    color: #000;
+}
+.form-control .help-block .with-errors{
+    color: #f4516c!important;
+    margin-top: 5px!important;
+}
+.has-danger .input-group-addon, .has-danger .form-control{
+    border-color: #f4516c!important;
+}
+
+:root {
+   --primaryColor: sandybrown;
+   --textColor: #666b69;
+   --backgroundColor: #333130;
+}
+
+/* Switch component */
+
+.Switch > span {
+   position: relative;
+   padding-left: 3em;
+   user-select: none; /* just for the demo */
+}
+
+.Switch > input[type='checkbox'] {
+    display: none;
+}
+
+.Switch > span:before {
+    background-color: var(--textColor);
+    border-radius: 1.2em;
+    border: .1em solid transparent;
+    content: '';
+    height: 1.2em;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: .3em;
+    transition: background-color .2s;
+    width: 2.4em;
+}
+
+.Switch > span:after {
+   background-color: #e6f2ee;
+   border-radius: 50%;
+   border: .1em solid var(--textColor);
+   content: '';
+   height: 1.2em;
+   left: 0;
+   position: absolute;
+   top: .3em;
+   transition: border-color, transform .2s;
+   width: 1.2em;
+}
+
+.Switch > input:checked + span:before {
+   background-color: var(--primaryColor);
+}
+
+.Switch > input:checked + span:after {
+   border-color: var(--primaryColor);
+   transform: translateX(100%);
+}
+@media (max-width: 425px) {
+    .form_dashboard_chart input{
+        font-size: 10px!important;
+    }
+    .icono_chart{
+        display: none!important;
+    }
+    .titulo_chart{
+        font-size: 10px!important;
+    }
+}
+
+
