@@ -18,7 +18,7 @@
 	</script>
 	<link href="{{ asset('css/vendors.bundle.css') }}" rel="stylesheet" type="text/css" />
 	<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('assets/vendors/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('css/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
 	<link rel="shortcut icon" href="{{ url('imagenes/favicon.ico') }}" />
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
@@ -46,7 +46,7 @@
 	<script src="{{ asset('js/vendors.bundle.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('js/scripts.bundle.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('/js/dashboard.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('assets/vendors/custom/datatables/datatables.bundle.js') }}"></script>
+	<script src="{{ asset('js/datatables.bundle.js') }}"></script>
 	@stack('scripts')
 	<script type="text/javascript">
 		var baseUrl='{{url('/')}}';

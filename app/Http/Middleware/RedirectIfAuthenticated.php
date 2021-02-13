@@ -19,13 +19,10 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::check() && Auth::user()->estado == 1) {
+        if (Auth::guard($guard)->check()) {
             return redirect('/home');
-        }elseif (Auth::check() && Auth::user()->estado == 0) {
-            Auth::guard()->logout();
-
-            return redirect('/login')->with('mensaje', '¡¡Usuario inactivo!!, por favor comuniquese con el administrador de la plataforma.');
         }
+
         return $next($request);
     }
 }

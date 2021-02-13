@@ -6,7 +6,7 @@
         <div class="kt-portlet__body  kt-portlet__body--fit">
             <div class="row row-no-padding row-col-separator-xl">
                 <div class="col-md-12 col-lg-12 col-xl-12">
-                    <img src="{!! asset('image/bg/home.jpg') !!}" style="width: 100%">
+                    <img src="{{ asset('imagenes/fondo.jpg') }}" style="width: 100%">
                 </div>
             </div>
         </div>
@@ -18,5 +18,4 @@
         </div>
     </div>
 </div>
-@include('layouts.modals')
 @endsection
