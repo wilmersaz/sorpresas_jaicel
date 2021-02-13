@@ -9,21 +9,34 @@
                                         <i class="fa fa-home" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
                                 </a>
+                                @if (Auth::check())
                                 <a href="{{ url('/productos/products') }}" class="m-brand__logo-wrapper" title="Productos" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Productos">
                                     <div class="m-demo-icon__preview">
                                         <i class="fa fa-shopping-basket" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
                                 </a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" target="_blank" class="m-brand__logo-wrapper" title="Cerrar sesión" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Cerrar sesión">
+                                    <div class="m-demo-icon__preview">
+                                        <i class="fa fa-sign-out-alt" style="width: 45px; height: 45px;font-size: 35px;"></i>
+                                    </div>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                                @else
                                 <a href="{{ route('login') }}" class="m-brand__logo-wrapper" title="Iniciar sesión" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Iniciar sesión">
                                     <div class="m-demo-icon__preview">
                                         <i class="fa fa-user-lock" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
                                 </a>
-                                <a href="#" class="m-brand__logo-wrapper" title="Configuración" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Configuración">
+                                @endif
+                                @if (Auth::check())
+                                <a href="{{ url('/categorias/index') }}" class="m-brand__logo-wrapper" title="Categorias" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Categorias">
                                     <div class="m-demo-icon__preview">
                                         <i class="fab fa-whmcs" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
                                 </a>
+                                @endif
                                 <a style="float: right" href="{{ route('contactus') }}" class="m-brand__logo-wrapper" title="Contáctanos" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Contáctanos">
                                     <div class="m-demo-icon__preview">
                                         <i class="fa fa-info-circle" style="width: 45px; height: 45px;font-size: 35px;"></i>
@@ -48,6 +61,7 @@
                                                 </span>
                                             </a>
                                         </li>
+                                            @if (Auth::check())
                                         <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
                                             <a  href="{{ url('/productos/products') }}" class="m-menu__link">
                                                 <span class="m-menu__item-here"></span>
@@ -56,22 +70,37 @@
                                                 </span>
                                             </a>
                                         </li>
+                                            @endif
                                         <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
+                                            @if (Auth::check())
+                                            <a  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" target="_blank" class="m-menu__link">
+                                                <span class="m-menu__item-here"></span>
+                                                <span class="m-menu__link-text">
+                                                    Cerrar Sesión
+                                                </span>
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                            @else
                                             <a  href="{{ route('login') }}" class="m-menu__link">
                                                 <span class="m-menu__item-here"></span>
                                                 <span class="m-menu__link-text">
                                                     Iniciar Sesión
                                                 </span>
                                             </a>
+                                            @endif
                                         </li>
-                                        <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel kt-menu__item--open-dropdown kt-menu__item--hover" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
-                                            <a  class="m-menu__link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="m-menu__link-text">Configuración</span>
+                                        @if (Auth::check())
+                                        <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
+                                            <a  href="{{ url('/categorias/index') }}" class="m-menu__link">
+                                                <span class="m-menu__item-here"></span>
+                                                <span class="m-menu__link-text">
+                                                    Categorías
+                                                </span>
                                             </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start">
-                                                <a class="dropdown-item" href="{{ url('/categorias/index') }}">Categoriás</a>
-                                            </div>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
