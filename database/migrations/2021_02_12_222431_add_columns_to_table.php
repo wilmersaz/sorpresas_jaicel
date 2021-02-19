@@ -13,10 +13,14 @@ class AddColumnsToTable extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
            $table->string('name')->nullable($value=false)->after('id');
            $table->string('description')->nullable($value=false)->after('name');
-       });
+           $table->string('price')->nullable($value=false)->after('description');
+           $table->string('image')->nullable($value=false)->after('price');
+           $table->string('category_id')->nullable($value=false)->after('image');
+           $table->string('state')->nullable($value=false)->after('category_id');
+        });
     }
 
     /**
@@ -26,7 +30,8 @@ class AddColumnsToTable extends Migration
      */
     public function down()
     {
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
+            //
         });
     }
 }

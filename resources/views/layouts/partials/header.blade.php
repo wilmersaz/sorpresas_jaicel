@@ -10,7 +10,7 @@
                                     </div>
                                 </a>
                                 @if (Auth::check())
-                                <a href="{{ url('/productos/products') }}" class="m-brand__logo-wrapper" title="Productos" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Productos">
+                                <a href="{{ route('listadoProductos') }}" class="m-brand__logo-wrapper" title="Productos" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Productos">
                                     <div class="m-demo-icon__preview">
                                         <i class="fa fa-shopping-basket" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
@@ -31,17 +31,20 @@
                                 </a>
                                 @endif
                                 @if (Auth::check())
-                                <a href="{{ url('/categorias/index') }}" class="m-brand__logo-wrapper" title="Categorias" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Categorias">
+                                <a href="{{ route('categorias.index') }}" class="m-brand__logo-wrapper" title="Categorias" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Categorias">
                                     <div class="m-demo-icon__preview">
                                         <i class="fab fa-whmcs" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
                                 </a>
                                 @endif
-                                <a style="float: right" href="{{ route('contactus') }}" class="m-brand__logo-wrapper" title="Contáctanos" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Contáctanos">
+                                @if (Auth::check())
+                                @else
+                                <a style="float: right" href="{{ route('contacto.create') }}" class="m-brand__logo-wrapper" title="Contáctanos" data-toggle="m-tooltip" data-placement="top" title="" data-original-title="Contáctanos">
                                     <div class="m-demo-icon__preview">
                                         <i class="fa fa-info-circle" style="width: 45px; height: 45px;font-size: 35px;"></i>
                                     </div>
                                 </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -61,16 +64,39 @@
                                                 </span>
                                             </a>
                                         </li>
-                                            @if (Auth::check())
-                                        <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
-                                            <a  href="{{ url('/productos/products') }}" class="m-menu__link">
+                                        <li class="m-menu__item m-menu__item--submenu m-menu__item--rel m-menu__item--open-dropdown" m-menu-submenu-toggle="click" aria-haspopup="true">
+                                            <a href="javascript:;" class="m-menu__link m-menu__toggle">
                                                 <span class="m-menu__item-here"></span>
                                                 <span class="m-menu__link-text">
-                                                    Ver Productos
+                                                    Productos
                                                 </span>
+                                                <i class="m-menu__hor-arrow la la-angle-down"></i>
+                                                <i class="m-menu__ver-arrow la la-angle-right"></i>
                                             </a>
+                                            <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+                                                <span class="m-menu__arrow m-menu__arrow--adjust" style="left: 79.5px;"></span>
+                                                <ul class="m-menu__subnav">
+                                                    @if (Auth::check())
+                                                    <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
+                                                        <a  href="{{ route('productos.index') }}" class="m-menu__link">
+                                                            <span class="m-menu__item-here"></span>
+                                                            <span class="m-menu__link-text">
+                                                                Administrar Productos
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    @endif
+                                                    <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
+                                                        <a  href="{{ route('listadoProductos') }}" class="m-menu__link">
+                                                            <span class="m-menu__item-here"></span>
+                                                            <span class="m-menu__link-text">
+                                                                Ver Productos
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
-                                            @endif
                                         <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
                                             @if (Auth::check())
                                             <a  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" target="_blank" class="m-menu__link">
@@ -93,7 +119,7 @@
                                         </li>
                                         @if (Auth::check())
                                         <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
-                                            <a  href="{{ url('/categorias/index') }}" class="m-menu__link">
+                                            <a  href="{{ route('categorias.index') }}" class="m-menu__link">
                                                 <span class="m-menu__item-here"></span>
                                                 <span class="m-menu__link-text">
                                                     Categorías
@@ -114,14 +140,17 @@
                                 </button>
                                 <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-dark m-aside-header-menu-mobile--submenu-skin-dark "  >
                                     <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
+                                        @if (Auth::check())
+                                        @else
                                         <li class="m-menu__item  m-menu__item--submenu  m-menu__item--submenu m-menu__item--rel" aria-haspopup="true">
-                                            <a  href="{{ route('contactus') }}" class="m-menu__link">
+                                            <a  href="{{ route('contacto.create') }}" class="m-menu__link">
                                                 <span class="m-menu__item-here"></span>
                                                 <span class="m-menu__link-text">
                                                     Contáctanos
                                                 </span>
                                             </a>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>

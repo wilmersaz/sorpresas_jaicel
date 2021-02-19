@@ -8,9 +8,10 @@
 		margin: 0; 
 	}
 </style>
+Session::flash('message', 'Mensaje enviado correctamente!'); 
 <div class="m-grid m-grid--hor m-grid--root m-page">
 	<div class="card" style="padding: 30px;">
-		<div style="padding-top: 7%" class="row">
+		<div style="padding-top: 1%" class="row">
 			<div class="col-md-4 mx-auto shadow m-portlet m-portlet--tab">
 				<div class="m-portlet__head">
 					<div class="m-portlet__head-caption">
@@ -24,51 +25,62 @@
 						</div>
 					</div>
 				</div>
-				<form class="m-form m-form--fit m-form--label-align-right">
+				<form class="m-form m-form--fit m-form--label-align-right" method="POST" action="{{route('contacto.store')}}" id="FormStore">
+					{{csrf_field()}}
 					<div class="m-portlet__body">
-						<div class="col-md-12">
-							<div class="form-group">
-								<label >Nombre</label>
-								<input class="form-control m-input" type="text">
+						<div class="m-portlet__body">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label >Nombre</label>
+									<div class="input-group">
+										<div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="la la-user"></i></span></div>
+										<input type="text" class="form-control" placeholder="Nombre" id="name" name="name" required>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<label>Teléfono</label>
-								<input class="blockNums form-control m-input" type="number">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Teléfono</label>
+									<div class="input-group">
+										<div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="la la-phone"></i></span></div>
+										<input type="number" class="blockNums form-control m-input" placeholder="Teléfono" id="telephone" name="telephone" required>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<label>Email</label>
-								<input class="form-control m-input" type="email">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Email</label>
+									<div class="input-group">
+										<div class="input-group-prepend kt-font-brand"><span class="input-group-text">@</span></div>
+										<input type="email" class="form-control m-input" placeholder="Correo Electrónico" id="email" name="email" required>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<label>Observación</label>
-								<textarea class="form-control m-input" id="exampleTextarea" rows="3"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="m-portlet__foot m-portlet__foot--fit">
-						<div class="m-form__actions">
-							<div class="row">
-								<div class="col-2"></div>
-								<div class="col-10">
-									<button type="submit" class="btn btn-primary">
-										Enviar
-									</button>
-									<button type="reset" class="btn btn-secondary">
-										Cancelar
-									</button>
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Observación</label>
+									<textarea class="form-control" id="description" name="description" rows="3" required></textarea>
 								</div>
 							</div>
 						</div>
-					</div>
-				</form>
+						<div class="m-portlet__foot m-portlet__foot--fit">
+							<div class="m-form__actions">
+								<div class="row">
+									<div class="col-2"></div>
+									<div class="col-10">
+										<button type="submit" class="btn btn-primary">
+											Enviar
+										</button>
+										<button type="reset" class="btn btn-secondary">
+											Cancelar
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-@endsection
+	@endsection

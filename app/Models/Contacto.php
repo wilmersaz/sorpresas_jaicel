@@ -2,22 +2,24 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Ciudad extends Model
+class Contacto extends Model
 {
 
 
-    public $table = 'ciudades';
+    public $table = 'contactus';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
 
     public $fillable = [
-        'id',
-        'nombre'
+        'name',
+        'telephone',
+        'email',
+        'description'
     ];
 
     /**
@@ -27,7 +29,10 @@ class Ciudad extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nombre' => 'string'
+        'name' => 'string',
+        'telephone' => 'string',
+        'email' => 'string',
+        'description' => 'string'
     ];
 
     /**

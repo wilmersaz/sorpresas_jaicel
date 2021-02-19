@@ -4,7 +4,7 @@
 <div class="card" style="padding: 30px;">
     <div class=" pull-left">
         <a href="{{route('categorias.create')}}" class="btn btn-dark btn-elevate btn-pill" title="Crear">
-            <span><i class="la la-plus"></i><span>Agregar Ciudad</span></span>
+            <span><i class="la la-plus"></i><span>Agregar Categoría</span></span>
         </a>
     </div>
     <div class="card-body">

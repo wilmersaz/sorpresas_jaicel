@@ -33,7 +33,4 @@ class AppBaseController extends Controller
 	public function contactus(){
 		return view('contactus');
 	}
-	public function products(){
-		return view('productos.products');
-	}
 }

@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/Inventarios/public/'),
+    'url' => env('APP_URL', 'http://localhost/ProyectoTienda/public/'),
 
     /*
     |--------------------------------------------------------------------------
