@@ -5,9 +5,9 @@ var SnippetLogin = function() {
 
     var showErrorMsg = function(form, type, msg) {
         var alert = $('<div class="m-alert m-alert--outline alert alert-' + type + ' alert-dismissible" role="alert">\
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>\
-			<span></span>\
-		</div>');
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>\
+         <span></span>\
+         </div>');
 
         form.find('.alert').remove();
         alert.prependTo(form);
@@ -94,9 +94,8 @@ var SnippetLogin = function() {
                     location.reload();
                 },
                 error: function(response, status, xhr, $form) {
-                        btn.removeClass('m-loader m-loader--right m-loader--light').html('Iniciar Sesión').attr('disabled', false);
-                        showErrorMsg(form, 'danger', 'Nombre de usuario o contraseña incorrecta. Inténtalo de nuevo.');
-
+                    btn.removeClass('m-loader m-loader--right m-loader--light').html('Iniciar Sesión').attr('disabled', false);
+                    showErrorMsg(form, 'danger', 'Nombre de usuario o contraseña incorrecta. Inténtalo de nuevo.');
                 }
             });
         });

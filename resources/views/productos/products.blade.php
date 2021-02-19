@@ -7,7 +7,6 @@
 			<div class="m-portlet__body m-portlet__body--no-padding">
 				<div class="m-pricing-table-2" style="background-color: #fff">
 					<div class="m-pricing-table-2__head" style="background-color: #fff">
-						<br><br>
 						<div class="m-pricing-table-2__title text-primary">
 							<h1>Productos</h1>
 						</div>

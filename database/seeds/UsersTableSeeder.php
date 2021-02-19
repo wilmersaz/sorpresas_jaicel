@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Wilmer Sanchez',
                 'username' => 'wilmer.sanchez',
-                'email' => 'wasanchez@serdan.com.co',
+                'mail' => 'wasanchez@serdan.com.co',
                 'password' => '$2y$10$5KE1dLqv7KmnAaTvB2oNfOuWTFIBNYzMudBqrlifVchrWEC2Tq.zm',
                 'cargo' => 'Desarrollador I',
                 'estado' => 1,
